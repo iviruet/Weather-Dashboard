@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/f10d372ee9.js" crossorigin="anonymous"></script>
-    <link ref="style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script defer src="script.js"></script>
@@ -16,26 +16,36 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-dark bg-dark" style="contain: content;">
+    <nav class="navbar fixed-top navbar-dark bg-dark" style="height: 75px;">
         <div class="header-text">
             <h1>Weather Dashboard</h1>
         </div>
     </nav>
     <div>
-        <form id="form" style="margin-top: 150px">
-            <label for="city-input">Search for a City:</label>
-            <input type="text" id="city-input">
-            <button>
-                <i class="fas fa-search"></i>
-            </button>
-
-            <div class="city">City:</div>
-            <div class="temp">Temperature:</div>
-            <div class="wind">Wind Speed:</div>
-            <div class="humidity">Humidity:</div>
-            <div class="uv">UV Index:</div>
-
-        </form>
+        <form id="form">
+            <div class="row">
+                <div class="col-md-3">
+                    <label for="city-input">Search for a City:</label>
+                    <input type="text" id="city-input">
+                    <button id="find-city" type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <br>
+                    <ul id="past-cities"></ul>
+                </div>
+            </form>
+            
+                <div class="col-md-9">
+                    <table class="weather">
+                        <div id="city"></div>
+                        <div id="temp">Temperature:</div>
+                        <div id="wind">Wind Speed:</div>
+                        <div id="humidity">Humidity:</div>
+                        <div id="uv">UV Index:</div>
+                    </table>
+                </div>
+            </div>
+        
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"

@@ -1,9 +1,21 @@
+
 .header-text{
-    color: white;
+    color: aliceblue;
     text-align: center;
+    float: none;
+    padding: 0px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10px;
 }
 
 #form {
-    margin-top: 500px;
-    height: 300px;
+    margin-top: 100px;
+}
+
+.weather{
+    border: solid black;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 5px;
 }
