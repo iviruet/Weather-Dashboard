@@ -1,6 +1,6 @@
 /////get updated time
 // $(document).ready(function(){
-    const now= moment().format("MMMM Do YYYY");
+    const now= moment().format("(M/D/YYYY)");
 
 
 ///////saving cities to local storage
@@ -32,11 +32,12 @@ var pastCities =document.querySelector("past-cities");
 // };
 
 //////api key
-var api_key = "b6907d289e10d714a6e88b30761fae22"   
+var api_key = "8bd81fce793fc3c6e663d14e65e880f3"   
 $(".fa-search").on("click", function(event){
 event.preventDefault();
+
     var city =$("#city-input").val();
-    var queryUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=8bd81fce793fc3c6e663d14e65e880f3";
+    var queryUrl ="https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + api_key;
 
     $.ajax({
     url: queryUrl,
@@ -50,17 +51,18 @@ event.preventDefault();
 console.log(queryUrl);
 console.log(response);
 
-// $("#city").text(JSON.stringify(response));
+$("#city").text(JSON.stringify(response));
 
 /////transferring content to HTML
-$(".city").html("<h1>" + response.name + " Weather Details</h1>");
-$(".wind").text("Wind Speed: " + response.wind.speed);
-$(".humidity").text("<ht>" + response.main.humidity);
-$(".temp").text("<ht>" + response.main.temp);
+$("#city").html("<h2>" + response.name + now + "</h2>");
+$("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
+$("#humidity").text("Humidity: " + response.main.humidity + "%");
+$("#temp").text("Temperature: " + response.main.temp);
+$("#uv").text("UV Index: " + response.sys.type);
 
 ////////temp converter (K) to (F)
 var tempF = (response.main.temp - 273.15) * 1.80 + 32;
-        $(".tempF").text("Temperature (Kelvin) " + tempF);
+        $(".tempF").text("Temperature (K)" + tempF);
 
 //////console logging
 console.log("Wind Speed: " + response.wind.speed);
