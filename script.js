@@ -1,5 +1,5 @@
 /////get updated time
-// $(document).ready(function(){
+$(document).ready(function(){
 const now = moment().format("(M/D/YYYY)");
 
 
@@ -59,11 +59,11 @@ cityButton.addEventListener("click", function (event) {
     // };
 
     // //////api key
-    var api_key = "8bd81fce793fc3c6e663d14e65e880f3"
+    // var api_key = "8bd81fce793fc3c6e663d14e65e880f3"
     $(".fa-search").on("click", function (event) {
         event.preventDefault();
 
-        var city = $("#city-input").value();
+        var city = $("#city-input").val();
         var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=8bd81fce793fc3c6e663d14e65e880f3";
 
         $.ajax({
@@ -86,6 +86,7 @@ cityButton.addEventListener("click", function (event) {
                 // $('#wicon').attr('src', iconurl);
 
                 /////transferring content to HTML
+                $(".card-header").text(now);
                 $("#city").html("<h2>" + response.name + now + response.weather.icon + "</h2>");
                 $("#wind").text("Wind Speed: " + response.wind.speed + " MPH");
                 $("#humidity").text("Humidity: " + response.main.humidity + "%");
@@ -102,4 +103,4 @@ cityButton.addEventListener("click", function (event) {
                 console.log("Temperature (F): " + response.main.temp);
             });
     });
-
+});
