@@ -11,7 +11,7 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script defer src="script.js"></script>
+
     <title>Weather Dashboard</title>
 </head>
 
@@ -36,21 +36,33 @@
         </form>
 
         <div class="col-md-9">
-            <table class="weather">
-                <div id="city"><img id="wicon" src="" alt="Weather icon"></div>
-                <div id="temp">Temperature:</div>
-                <div id="wind">Wind Speed:</div>
-                <div id="humidity">Humidity:</div>
-                <div id="uv">UV Index:</div>
-            </table>
+            <div class="card">
+                <div class="weathercard">
+                    <div id="city"><img id="wicon" src="" alt="weather icon"></div>
+                    <div id="temp">Temperature:</div>
+                    <div id="wind">Wind Speed:</div>
+                    <div id="humidity">Humidity:</div>
+                    <div id="uv">UV Index:</div>
+                </div>
+            </div>
         </div>
     </div>
 
     </div>
     <h5 class="forecast">5-Day Forecast:</h5>
-    <div class= "container">
-    <div class="row">
-        <div class="col-md-1"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2">
+                <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
+                    <div class="card-header"></div>
+                    <div class="card-body">
+                        <p class="card-title">Temp: </p>
+                        <p class="card-text">Humidity: </p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="col-md-2">
             <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
                 <div class="card-header"></div>
@@ -60,48 +72,39 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
-            <div class="card-header"></div>
-            <div class="card-body">
-                <p class="card-title">Temp: </p>
-                <p class="card-text">Humidity: </p>
+        <div class="col-md-2">
+            <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <p class="card-title">Temp: </p>
+                    <p class="card-text">Humidity: </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
-            <div class="card-header"></div>
-            <div class="card-body">
-                <p class="card-title">Temp: </p>
-                <p class="card-text">Humidity: </p>
+        <div class="col-md-2">
+            <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <p class="card-title">Temp: </p>
+                    <p class="card-text">Humidity: </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
-            <div class="card-header"></div>
-            <div class="card-body">
-                <p class="card-title">Temp: </p>
-                <p class="card-text">Humidity: </p>
+        <div class="col-md-2">
+            <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
+                <div class="card-header"></div>
+                <div class="card-body">
+                    <p class="card-title">Temp: </p>
+                    <p class="card-text">Humidity: </p>
+                </div>
             </div>
         </div>
+        <div class="col-md-1"></div>
     </div>
-    <div class="col-md-2">
-        <div class="card text-white bg-primary mb-3" style="max-width: 12rem;">
-            <div class="card-header"></div>
-            <div class="card-body">
-                <p class="card-title">Temp: </p>
-                <p class="card-text">Humidity: </p>
-            </div>
-        </div>
     </div>
-    <div class="col-md-1"></div>
-    </div>
-</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"
         integrity="sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

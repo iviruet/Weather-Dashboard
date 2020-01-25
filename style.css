@@ -19,3 +19,12 @@
     padding: 5px 5px 5px 5px;
     margin: 5px 5px 5px 5px;
 }
+
+.forecast{
+    text-align: center;
+}
+
+.weather-card{
+width: 80%;
+}
+
